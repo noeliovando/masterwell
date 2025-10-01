@@ -1,0 +1,2011 @@
+/* Reemplaza la definición actual del body */
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400; /* Regular */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    -webkit-font-smoothing: antialiased; /* Mejora el renderizado en navegadores WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado en Firefox */
+}
+
+/* Asegura consistencia en todos los elementos */
+body, input, button, select, textarea,
+table, th, td, h1, h2, h3, h4, h5, h6,
+.navbar, .modal, .card, .btn, .form-control {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400; /* Regular */
+    line-height: 1.4; /* Espaciado consistente */
+}
+
+/* Reset de estilos heredados */
+strong, b {
+    font-weight: 600; /* Semi-bold para énfasis */
+}
+
+.form-group-search > input,
+.form-group-search > button {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.form-group-search > label {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+.login-container {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+.login-title-container h1 {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400; /* Regular en lugar de 600 */
+    letter-spacing: 0.5px;
+}
+
+table {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+.card, .detail-section {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+.main-container {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.dg-title-container > h1 {
+    font-size: 35px !important;           /* Tamaño más grande para títulos importantes */
+    font-weight: 700 !important;
+    margin-bottom: 20px;               /* Texto blanco */
+    text-align: center;        /* Centrado horizontal */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+    padding: 10px 0;           /* Espaciado vertical */
+    letter-spacing: 0.5px;     /* Espaciado entre letras */
+}
+
+h1, h2 {
+    color: #383838;
+}
+
+/* Estilos para el logo en el nav */
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #D71920;
+    justify-content: space-between; /* Añade esto para distribuir el espacio */
+}
+
+/* Estilo específico para el contenedor del logo MW */
+.logo-container:last-child {
+    margin-left: auto; /* Esto empujará el logo MW a la derecha */
+}
+
+.well-details-header{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.company-logo {
+    height: 60px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    object-fit: contain;
+    margin-right: 0px;
+}
+
+.company-logo-mw {
+    height: 60px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.company-logo-combinado {
+    height: 70px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+    object-fit: contain;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #D92E29;
+    border-radius: 8px;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #7c1a17;
+    text-decoration: none; /* Elimina subrayado en hover */
+    color: white; /* Mantiene el mismo color */
+}
+
+/*Estilos para el login*/
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-title-container{
+    font-size: 24px;           /* Tamaño más grande para títulos importantes */
+    margin-bottom: 20px;               /* Texto blanco */
+    text-align: center;        /* Centrado horizontal */
+    font-weight: 600;          /* Semi-negrita */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+    padding: 10px 0;           /* Espaciado vertical */
+    letter-spacing: 0.5px;     /* Espaciado entre letras */
+}
+
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #c5c5c5;
+}
+
+/* Estilos para campos editables en login */
+.login-editable-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 14px;
+    width: 250px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: calc(100% - 20px);
+    background-color: white;
+}
+
+/* Para los campos de login */
+.login-editable-field:focus {
+    outline: none;
+    border-color: #D71920;
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.2);
+}
+
+.login-container button[type="submit"] {
+    background-color: #D71920;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30%;            /* O el ancho que prefieras para el login */
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* Hover para el botón del login */
+.login-container button[type="submit"]:hover {
+    background-color: #6b0e11;
+}
+
+.logo-container-login {
+    /*height: 60px; /* Ajusta según el tamaño de tu logo */
+    width: 150;
+}
+
+.form-group-search{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.form-group-search > label {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #383838;
+    font-size: 14px;  /* Texto más pequeño */
+}
+
+.form-group-search > input {
+    width: 250px;  /* Ancho fijo más reducido */
+    padding: 8px 12px;  /* Padding más compacto */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;  /* Texto más pequeño */
+    transition: border-color 0.3s ease;
+}
+
+.form-group-search > input:focus {
+    outline: none;
+    border-color: #D71920; /* Rojo principal */
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.2); /* Sombra roja suave */
+}
+
+.form-group-search > button[type="submit"] {
+    background-color: #D71920;
+    color: white;
+    padding: 3px 8px;       /* Padding mínimo */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;        /* Texto más pequeño */
+    transition: background-color 0.2s ease;
+    width: 70px;            /* Ancho según contenido */
+    box-sizing: border-box;
+    margin-left: 5px;       /* Espacio entre el input y el botón */
+    height: 39px;
+    font-weight: 600;
+}
+
+/* Estilo para hover del botón de búsqueda */
+.form-group-search > button[type="submit"]:hover {
+    background-color: #6b0e11;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #6d6d6d;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #D71920;
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.2);
+}
+
+button[type="submit"] {
+    background-color: #D71920;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+button[type="submit"]:hover {
+    background-color: #6b0e11;
+}
+
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #555;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para la vista de pozos */
+.well-layout-container {
+    display: flex;
+    gap: 20px;
+}
+
+.well-list-panel {
+    flex: 1;
+    max-width: 300px;
+}
+
+.well-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.well-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.well-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.well-list li.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+.well-list li.active a {
+    color: white;
+}
+
+.well-item-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.well-details-panel {
+    flex: 3;
+}
+
+#well-details-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    border-bottom: 2px solid #383838;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.detail-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.detail-section h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.detail-section p {
+    margin: 5px 0;
+}
+
+/* Estilos para la tabla de pozos relacionados */
+.related-wells-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.related-wells-table th, 
+.related-wells-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.related-wells-table th {
+    background-color: #f2f2f2;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.related-wells-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.related-wells-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.related-wells-table a {
+    color: #D71920;
+    text-decoration: none;
+}
+
+.related-wells-table a:hover {
+    text-decoration: underline;
+    color: #7c1a17;
+}
+
+/* Estilos para los botones de edición */
+.edit-field-button {
+    background-color: #7e7e7e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s;
+}
+
+.edit-field-button:hover {
+    background-color: #303030;
+}
+
+/* Estilos para los campos editables */
+.editable-container {
+    margin-bottom: 10px;
+}
+
+.editable-container p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.editable-container strong {
+    min-width: 200px;
+    display: inline-block;
+}
+
+.editable-field {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Estilo para selects editables */
+.editable-field select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 12px;
+}
+
+/* Dashboard Styles */
+.main-container {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.chart-section, .table-section {
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estadísticas del Dashboard */
+.stats-section {
+    margin-bottom: 30px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.stat-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+.stat-value {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-change {
+    margin-bottom: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.bg-blue { 
+    background: linear-gradient(135deg, #3498db, #2980b9); 
+}
+.bg-green { 
+    background: linear-gradient(135deg, #2ecc71, #27ae60); 
+}
+.bg-orange { 
+    background: linear-gradient(135deg, #e67e22, #d35400); 
+}
+.bg-purple { 
+    background: linear-gradient(135deg, #9b59b6, #8e44ad); 
+}
+
+.stat-subtitle {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Alertas para secciones sin datos */
+.alert {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-left-color: #ffc107;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-left-color: #17a2b8;
+    color: #0c5460;
+}
+
+.alert h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.alert p {
+    margin-bottom: 8px;
+}
+
+.alert ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.alert li {
+    margin-bottom: 5px;
+}
+
+/* Sección de información técnica */
+.info-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-card {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: #495057;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Nueva sección de información técnica más ancha */
+.info-section-wide {
+    margin: 30px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-section-wide h2 {
+    margin: 0 0 25px 0;
+    color: #2c3e50;
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.info-grid-wide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-card-wide {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card-wide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-icon {
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.info-content p {
+    margin: 0;
+    font-size: 1em;
+    color: #34495e;
+    font-weight: 500;
+}
+
+/* Sección de gráficos más grandes */
+.chart-section-large {
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.chart-section-large h2 {
+    margin: 0 0 30px 0;
+    color: #2c3e50;
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.chart-row-large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.chart-container-large {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-container-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.chart-container-large h3 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.chart-container-large canvas {
+    margin-top: 10px;
+}
+
+/* Estilos empresariales sin iconos */
+.info-section-corporate {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.info-section-corporate h2 {
+    margin: 0 0 25px 0;
+    color: #2c3e50;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.info-grid-corporate {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-card-corporate {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card-corporate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-card-corporate h4 {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: #2c3e50;
+    font-weight: 600;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 8px;
+}
+
+.info-card-corporate p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #34495e;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Estilos para Estadísticas por Región */
+.regional-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.regional-section h2 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.regional-alert {
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.regional-alert p {
+    margin: 0;
+    color: #1565c0;
+    font-size: 0.95em;
+}
+
+.regional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.regional-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.regional-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.regional-card h3 {
+    margin: 0 0 15px 0;
+    color: #e74c3c;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 8px;
+}
+
+.regional-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.stat-number {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.stat-region {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #3498db;
+    background: #e3f2fd;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Estilos para Empresas Mixtas */
+.mixed-companies-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.mixed-companies-section h2 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #8e44ad;
+    padding-bottom: 10px;
+}
+
+.mixed-companies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.company-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.company-card h3 {
+    margin: 0 0 15px 0;
+    color: #8e44ad;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 8px;
+}
+
+.company-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Responsive para pantallas medianas (tablets) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .regional-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .mixed-companies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .info-grid-wide {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid-corporate {
+        grid-template-columns: 1fr;
+    }
+    
+    .regional-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .mixed-companies-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .chart-row-large {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .chart-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .info-section-wide {
+        padding: 20px;
+    }
+    
+    .info-section-corporate {
+        padding: 20px;
+    }
+    
+    .regional-section {
+        padding: 20px;
+    }
+    
+    .mixed-companies-section {
+        padding: 20px;
+    }
+    
+    .chart-section-large {
+        padding: 20px;
+    }
+    
+    .regional-card {
+        padding: 15px;
+    }
+    
+    .company-card {
+        padding: 15px;
+    }
+}
+
+/* Tabla de datos anuales */
+.table-section {
+    margin-bottom: 25px;
+}
+
+.table-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.5em;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.data-table th, .data-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.data-table th {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.data-table tr:hover {
+    background-color: #e8f4fd;
+    transition: background-color 0.2s ease;
+}
+
+/* Gráficos empresariales mejorados */
+.chart-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.chart-section h2 {
+    margin: 0 0 25px 0;
+    color: #2c3e50;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.chart-container {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.chart-container h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.chart-container h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 8px;
+}
+
+#wellsYearChart {
+    max-height: 250px !important;
+    margin: 0 auto;
+}
+
+.text-success { color: #2ecc71; }
+.text-danger { color: #e74c3c; }
+.text-center { text-align: center; }
+.text-muted { color: #95a5a6; }
+
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+/* Estilos para campos editables en identificación del pozo */
+.editable-field {
+    padding: 8px 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 14px;
+    width: 250px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 40%;
+}
+
+.editable-field:focus {
+    outline: none;
+    border-color: #D92E29; /* Rojo más intenso */
+    box-shadow: 0 0 0 3px rgba(217, 46, 41, 0.2);
+}
+
+.edit-field-button, .save-field-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-left: 5px;
+}
+
+.edit-field-button {
+    background-color: #727272;
+    color: white;
+}
+
+.edit-field-button:hover {
+    background-color: #494949;
+    transform: translateY(-1px);
+}
+
+.save-field-button {
+    background-color: #27ae60;
+    color: white;
+}
+
+.save-field-button:hover {
+    background-color: #229954;
+    transform: translateY(-1px);
+}
+
+.read-only-display {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    min-width: 200px;
+    margin-right: 10px;
+}
+
+.temp-success-message {
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-5px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-5px); }
+}
+
+/* Estilos específicos para la sección de identificación */
+.card h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #494949;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card p strong {
+    min-width: 200px;
+    display: inline-block;
+    color: #34495e;
+    font-weight: 600;
+}
+
+/* Estilos específicos para la sección de secuencia de perforación */
+.card h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #494949;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Estilo especial para la sección de secuencia de perforación */
+.card h2:contains("SECUENCIA DE PERFORACIÓN") {
+    border-bottom-color: #e67e22;
+}
+
+.card p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.card p strong {
+    min-width: 200px;
+    display: inline-block;
+    color: #34495e;
+    font-weight: 600;
+}
+
+/* Estilos para la tabla de coordenadas */
+.coordinates-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.coordinates-table th,
+.coordinates-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.coordinates-table th {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+/* Alinear a la derecha las celdas de datos (columnas 2, 3 y 4) */
+.coordinates-table td:nth-child(2),
+.coordinates-table td:nth-child(3),
+.coordinates-table td:nth-child(4) {
+    text-align: right !important;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+}
+
+/* Mantener la primera columna (descripción) alineada a la izquierda */
+.coordinates-table td:first-child {
+    text-align: left !important;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.coordinates-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.coordinates-table tr:hover {
+    background-color: #e8f4fd;
+    transition: background-color 0.2s ease;
+}
+
+/* ===== ESTILOS DEL MODAL ACTUALIZADOS ===== */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;           /* Nuevo: Usa flexbox para centrado */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    backdrop-filter: blur(3px);
+    padding: 20px;           /* Padding para evitar tocar bordes en móviles */
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 100%;            /* Ocupa el ancho disponible */
+    max-width: 500px;       /* Pero no más de 500px */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: modalSlideIn 0.25s ease-out;
+    margin: auto;           /* Ayuda al centrado adicional */
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background-color: #D71920; /* Rojo corporativo */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #7c1a17;
+}
+
+.modal-header h3 {
+    color:#fff;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.close-modal {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 20px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.modal-body p {
+    margin: 0 0 15px 0;
+}
+
+.modal-body p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-body strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.warning-text {
+    color: #c0392b;
+    background-color: #fdf2f2;
+    border-left: 4px solid #e74c3c;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-confirm, .btn-cancel {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-confirm {
+    background-color: #27ae60;
+    color: white;
+    border: 1px solid #219653;
+}
+
+.btn-confirm:hover {
+    background-color: #219653;
+}
+
+.btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+    border: 1px solid #7f8c8d;
+}
+
+.btn-cancel:hover {
+    background-color: #7f8c8d;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+    }
+    
+    .modal-header {
+        padding: 12px 15px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        padding: 12px 15px;
+        justify-content: center;
+    }
+    
+    .btn-confirm, .btn-cancel {
+        padding: 8px 12px;
+        flex-grow: 1;
+    }
+}
+.btn-confirm {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-confirm:hover {
+    background-color: #229954;
+    transform: translateY(-1px);
+}
+
+.btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-1px);
+}
+
+/* Transiciones suaves para todos los focus */
+input[type="text"],
+input[type="password"],
+.editable-field,
+.login-editable-field {
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el contenedor de resultados */
+.well-results-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Estilo cuando hay más de 20 resultados */
+.well-results-container.scroll-enabled {
+    max-height: 600px; /* Altura máxima antes de aparecer el scroll */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Estilos para la tabla dentro del contenedor */
+.well-results-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.well-results-container thead {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 10;
+}
+
+/* Estilo para el scrollbar (opcional) */
+.well-results-container.scroll-enabled::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.well-results-container.scroll-enabled::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.well-results-container.scroll-enabled::-webkit-scrollbar-thumb {
+    background: #D71920;
+    border-radius: 4px;
+}
+
+.well-results-container.scroll-enabled::-webkit-scrollbar-thumb:hover {
+    background: #6b0e11;
+}
+
+/* Estilos para el footer */
+.app-footer {
+    background-color: #8a8989; /* Rojo corporativo como la barra de navegación */
+    color: white;
+    padding: 10px 20px;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-top: 1px solid #5a5a5a; /* Borde superior oscuro */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.app-name {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra similar a títulos */
+}
+
+.app-version {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.developed-by {
+    font-style: normal;
+    opacity: 0.9;
+}
+
+.copyright {
+    opacity: 0.8;
+}
+
+/* Ajuste para el contenido principal */
+.main-container {
+    padding-bottom: 50px; /* Espacio para el footer */
+}
+
+/* ===== ESTILOS GENERALES DEL DASHBOARD ===== */
+body {
+    font-family: "Helvetica", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.5;
+    font-size: 14px; /* Tamaño base más pequeño */
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3 {
+    color: #2c3e50;
+    font-weight: 500; /* Más delgado que bold */
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* ===== TARJETAS DE ESTADÍSTICAS ===== */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    padding: 15px;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.bg-blue { 
+    background-color: #2980b9; /* Azul más oscuro */
+    border-left: 4px solid #3498db;
+}
+.bg-green { 
+    background-color: #27ae60; /* Verde más oscuro */
+    border-left: 4px solid #2ecc71;
+}
+.bg-orange { 
+    background-color: #d35400; /* Naranja más oscuro */
+    border-left: 4px solid #e67e22;
+}
+
+.stat-value {
+    font-size: 1.8rem; /* Más pequeño que 2.5em */
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.stat-change {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ===== GRIDS PARA REGIONES Y EMPRESAS ===== */
+.region-grid, .mixed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.card {
+    background: white;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.card h3 {
+    color: #D71920; /* Rojo corporativo */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.region-stats, .mixed-stats {
+    margin-top: 12px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 0.95rem;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.text-success { color: #27ae60; }
+.text-danger { color: #c0392b; }
+.text-muted { color: #7f8c8d; }
+
+/* ===== SECCIÓN DE GRÁFICOS ===== */
+.chart-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+@media (min-width: 992px) {
+    .chart-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+.chart-container {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.chart-container h2 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.chart-container canvas {
+    max-height: 180px !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* ===== ELEMENTOS INTERACTIVOS ===== */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #D71920;
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .region-grid, .mixed-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== AJUSTES ESPECÍFICOS PARA INTEGRACIÓN ===== */
+.dashboard-container {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-top: 0;
+}
+
+/* Coherencia con el header/nav */
+.main-nav ~ .dashboard-container {
+    margin-top: 15px;
+}
+
+/* ===== ESTILOS PARA BÚSQUEDA ASÍNCRONA ===== */
+
+.search-results-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-results-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-result-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.well-uwi {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.well-name {
+    color: #555;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.well-short {
+    color: #888;
+    font-size: 11px;
+    margin-top: 1px;
+}
+
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 10px;
+    text-align: center;
+    color: #666;
+    z-index: 1000;
+    display: none;
+}
+
+/* Ajuste para el contenedor de búsqueda */
+.form-group-search {
+    position: relative;
+}
+
+.form-group-search input[type="text"] {
+    position: relative;
+    z-index: 1001;
+}
