@@ -1,6 +1,37 @@
 <?php
-// views/dashboard.php
-// Dashboard con SOLO datos reales de la base de datos Oracle
+// Datos de muestra - normalmente vendrían de una base de datos
+$dashboardData = [
+    // Estadísticas generales
+    'totalWells' => 4850,
+    'activeWells' => 3920,
+    'lastUpdate' => date('d/m/Y H:i'),
+    
+    // Por región
+    'regions' => [
+        'Occidente' => ['total' => 1250, 'active' => 980, 'production' => 420000],
+        'Los Llanos' => ['total' => 850, 'active' => 720, 'production' => 380000],
+        'Oriente' => ['total' => 1500, 'active' => 1350, 'production' => 620000],
+        'Faja' => ['total' => 800, 'active' => 650, 'production' => 550000],
+        'Costa Afuera' => ['total' => 450, 'active' => 220, 'production' => 180000]
+    ],
+    
+    // Empresas mixtas
+    'mixedCompanies' => [
+        'Petrororaima' => ['wells' => 320, 'production' => 150000, 'region' => 'Oriente'],
+        'Petronado' => ['wells' => 280, 'production' => 180000, 'region' => 'Oriente'],
+        'Petromacareo' => ['wells' => 350, 'production' => 200000, 'region' => 'Faja'],
+        'Petromonagas' => ['wells' => 420, 'production' => 220000, 'region' => 'Oriente'],
+        'Petrocedeño' => ['wells' => 380, 'production' => 210000, 'region' => 'Faja'],
+        'Petrourica' => ['wells' => 290, 'production' => 160000, 'region' => 'Occidente']
+    ],
+    
+    // Datos para gráficos
+    'chartData' => [
+        'regions' => ['Occidente', 'Los Llanos', 'Oriente', 'Faja', 'Costa Afuera'],
+        'regionProduction' => [420000, 380000, 620000, 550000, 180000],
+        'mixedProduction' => [150000, 180000, 200000, 220000, 210000, 160000]
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,301 +43,105 @@
 </head>
 <body>
 
-    <!-- Incluir header -->
-    <?php include __DIR__ . '/../partials/header.php'; ?>
+        <!-- Incluir header -->
+        <?php include __DIR__ . '/../partials/header.php'; ?>
 
     <div class="dashboard-container">
-
         <h1>Dashboard de Gestión de Pozos</h1>
-
-
         
-        <!-- SECCIÓN 1: ESTADÍSTICAS GENERALES REALES -->
+        <!-- Sección de Estadísticas Generales -->
         <div class="stats-section">
             <h2>Resumen General</h2>
             <div class="stats-container">
                 <div class="stat-card bg-blue">
                     <h3>Total de Pozos</h3>
-                    <div class="stat-value"><?= number_format($totalWells ?? 0) ?></div>
-
+                    <div class="stat-value"><?= number_format($dashboardData['totalWells']) ?></div>
                 </div>
                 <div class="stat-card bg-green">
                     <h3>Pozos Activos</h3>
-                    <div class="stat-value"><?= number_format($activeWells ?? 0) ?></div>
-
-                </div>
-                <div class="stat-card bg-purple">
-                    <h3>Completados 2025</h3>
-                    <div class="stat-value"><?= number_format($completedThisYear ?? 0) ?></div>
-
+                    <div class="stat-value"><?= number_format($dashboardData['activeWells']) ?></div>
                 </div>
                 <div class="stat-card bg-orange">
                     <h3>Última Actualización</h3>
-                    <div class="stat-value" style="font-size: 0.9em;"><?= $lastUpdate ?></div>
-
+                    <div class="stat-value"><?= $dashboardData['lastUpdate'] ?></div>
                 </div>
             </div>
         </div>
         
-
-        
-        <!-- SECCIÓN 3: ESTADÍSTICAS POR REGIÓN -->
-        <div class="regional-section">
+        <!-- Sección por Regiones -->
+        <div class="region-section">
             <h2>Estadísticas por Región</h2>
-            <div class="regional-alert">
-                <p><strong>📅 Próximamente:</strong> Estos datos se actualizarán con información real de la base de datos.</p>
-            </div>
-            
-            <div class="regional-grid">
-                <!-- Occidente -->
-                <div class="regional-card">
-                    <h3>Occidente</h3>
-                    <div class="regional-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos Totales:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Activos:</span>
-                            <span class="stat-number text-success">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
+            <div class="region-grid">
+                <?php foreach ($dashboardData['regions'] as $name => $data): ?>
+                    <div class="region-card card">
+                        <h3><?= $name ?></h3>
+                        <div class="region-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Pozos Totales:</span>
+                                <span class="stat-value"><?= number_format($data['total']) ?></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Activos:</span>
+                                <span class="stat-value text-success"><?= number_format($data['active']) ?></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Producción:</span>
+                                <span class="stat-value"><?= number_format($data['production']) ?> bpd</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Los Llanos -->
-                <div class="regional-card">
-                    <h3>Los Llanos</h3>
-                    <div class="regional-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos Totales:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Activos:</span>
-                            <span class="stat-number text-success">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Oriente -->
-                <div class="regional-card">
-                    <h3>Oriente</h3>
-                    <div class="regional-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos Totales:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Activos:</span>
-                            <span class="stat-number text-success">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Faja -->
-                <div class="regional-card">
-                    <h3>Faja</h3>
-                    <div class="regional-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos Totales:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Activos:</span>
-                            <span class="stat-number text-success">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Costa Afuera -->
-                <div class="regional-card">
-                    <h3>Costa Afuera</h3>
-                    <div class="regional-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos Totales:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Activos:</span>
-                            <span class="stat-number text-success">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
         
-        <!-- SECCIÓN 4: EMPRESAS MIXTAS -->
-        <div class="mixed-companies-section">
+        <!-- Sección de Empresas Mixtas -->
+        <div class="mixed-section">
             <h2>Empresas Mixtas</h2>
-            <div class="regional-alert">
-                <p><strong>📅 Próximamente:</strong> Estos datos se actualizarán con información real de la base de datos.</p>
+            <div class="mixed-grid">
+                <?php foreach ($dashboardData['mixedCompanies'] as $name => $data): ?>
+                    <div class="mixed-card card">
+                        <h3><?= $name ?></h3>
+                        <div class="mixed-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Pozos:</span>
+                                <span class="stat-value"><?= number_format($data['wells']) ?></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Producción:</span>
+                                <span class="stat-value"><?= number_format($data['production']) ?> bpd</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Región:</span>
+                                <span class="stat-value"><?= $data['region'] ?></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-            
-            <div class="mixed-companies-grid">
-                <!-- Petrororaima -->
-                <div class="company-card">
-                    <h3>Petrororaima</h3>
-                    <div class="company-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Región:</span>
-                            <span class="stat-region">Oriente</span>
-                        </div>
-                    </div>
+        </div>
+        
+        <!-- Sección de Gráficos -->
+        <div class="chart-section">
+            <div class="chart-row">
+                <div class="chart-container card">
+                    <h2>Tipos de Datos</h2>
+                    <canvas id="regionProductionChart" height="180"></canvas>
                 </div>
-                
-                <!-- Petronado -->
-                <div class="company-card">
-                    <h3>Petronado</h3>
-                    <div class="company-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Región:</span>
-                            <span class="stat-region">Oriente</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Petromacareo -->
-                <div class="company-card">
-                    <h3>Petromacareo</h3>
-                    <div class="company-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Región:</span>
-                            <span class="stat-region">Faja</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Petromonagas -->
-                <div class="company-card">
-                    <h3>Petromonagas</h3>
-                    <div class="company-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Región:</span>
-                            <span class="stat-region">Oriente</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Petrocedeño -->
-                <div class="company-card">
-                    <h3>Petrocedeño</h3>
-                    <div class="company-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Región:</span>
-                            <span class="stat-region">Faja</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Petrourica -->
-                <div class="company-card">
-                    <h3>Petrourica</h3>
-                    <div class="company-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Pozos:</span>
-                            <span class="stat-number">0</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Producción:</span>
-                            <span class="stat-number">0 bpd</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Región:</span>
-                            <span class="stat-region">Occidente</span>
-                        </div>
-                    </div>
+                <div class="chart-container card">
+                    <h2>Producción por Región</h2>
+                    <canvas id="mixedProductionChart" height="180"></canvas>
                 </div>
             </div>
         </div>
-
-                                <!-- INFORMACIÓN TÉCNICA -->
-        <div class="info-section-corporate">
-            <h2>Información Técnica del Sistema</h2>
-            <div class="info-grid-corporate">
-                <div class="info-card-corporate">
-                    <h4>Instancia de Base de Datos</h4>
-                    <p><?= $_SESSION['db_credentials']['db_instance'] ?? 'No disponible' ?></p>
-                </div>
-                <div class="info-card-corporate">
-                    <h4>Usuario Conectado</h4>
-                    <p><?= $_SESSION['db_credentials']['user'] ?? 'No disponible' ?></p>
-                </div>
-                <div class="info-card-corporate">
-                    <h4>Hora de Carga</h4>
-                    <p><?= date('d/m/Y H:i:s') ?></p>
-                </div>
-                <div class="info-card-corporate">
-                    <h4>Seguridad</h4>
-                    <p>Rol WELL_ADMIN Verificado</p>
-                </div>
-
-            </div>
-        </div>
-
     </div>
 
     <?php include __DIR__ . '/../partials/footer.php'; ?>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard-charts.js"></script>
+    <script>
+    // Pasar datos PHP a JavaScript
+    const chartData = <?= json_encode($dashboardData['chartData']) ?>;
+    </script>
 </body>
 </html>

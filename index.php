@@ -61,6 +61,12 @@ $routes = [
     'tables/details' => ['controller' => 'TableController', 'action' => 'details'],
     'explorer' => ['controller' => 'ExplorerController', 'action' => 'index'],
     'schema' => ['controller' => 'SchemaController', 'action' => 'index'],
+
+    // --- Well Directory ---
+    'wells-directory' => ['controller' => 'WellDirectoryController', 'action' => 'index'],
+    'wells-directory/details' => ['controller' => 'WellDirectoryController', 'action' => 'details'], // <-- NUEVA
+    'wells-directory/edit'    => ['controller' => 'WellDirectoryController', 'action' => 'edit'],    // <-- NUEVA
+    'wells-directory/update'  => ['controller' => 'WellDirectoryController', 'action' => 'update'],  // <-- NUEVA (POST)
 ];
 
 // Debugging: Log the request URI and routes array AFTER definition
@@ -72,16 +78,25 @@ $controllerName = 'DashboardController';
 $actionName = 'index';
 $uwi = null; // Reiniciar uwi para evitar conflictos
 
-// Add dynamic route for well details
-if (preg_match('/^well\/details\/(.+)$/', $request_uri, $matches)) {
+// ==== RUTAS DINÁMICAS PRIMERO ====
+if (preg_match('/^wells-directory\/details\/(.+)$/', $request_uri, $matches)) {
+    $controllerName = 'WellDirectoryController';
+    $actionName = 'details';
+    $uwi = $matches[1];
+} elseif (preg_match('/^well\/details\/(.+)$/', $request_uri, $matches)) {
     $controllerName = 'WellController';
     $actionName = 'details';
     $uwi = $matches[1];
 } elseif (array_key_exists($request_uri, $routes)) {
+    // rutas estáticas
     $controllerName = $routes[$request_uri]['controller'];
     $actionName = $routes[$request_uri]['action'];
+} elseif (preg_match('/^wells-directory\/edit\/(.+)$/', $request_uri, $matches)) {
+    $controllerName = 'WellDirectoryController';
+    $actionName = 'edit';
+    $uwi = $matches[1];
 } else {
-    // Handle 404 or redirect to dashboard if not logged in
+    // No existe ruta: 404 o redirección
     if (!Auth::check()) {
         header('Location: ' . BASE_PATH . '/login');
         exit;
@@ -90,9 +105,28 @@ if (preg_match('/^well\/details\/(.+)$/', $request_uri, $matches)) {
     exit;
 }
 
+// ==== AUTENTICACIÓN PARA RUTAS PROTEGIDAS ====
+// Mejor usar prefijos para cubrir dinámicas como .../details/{UWI}
+$requiresAuth =
+    preg_match('#^dashboard($|/)#', $request_uri) ||
+    preg_match('#^well($|/)#', $request_uri) ||
+    preg_match('#^wells-directory($|/)#', $request_uri) ||
+    preg_match('#^tables/details($|/)#', $request_uri) ||
+    preg_match('#^explorer($|/)#', $request_uri) ||
+    preg_match('#^schema($|/)#', $request_uri) ||
+    preg_match('#^sqlplus($|/)#', $request_uri);
+
+if ($requiresAuth && !Auth::check()) {
+    header('Location: ' . BASE_PATH . '/login');
+    exit;
+}
+
 // Check authentication for protected routes
 // Excluir 'well/updateField' de las rutas protegidas aquí, la autenticación se manejará dentro del método updateField.
-$protected_routes = ['dashboard', 'well', 'well/details', 'tables/details', 'explorer'];
+$protected_routes = ['dashboard', 'well', 'well/details', 'tables/details', 'explorer', 
+
+'wells-directory', 'wells-directory/details', 'wells-directory/edit', 'wells-directory/update'
+];
 if (in_array($request_uri, $protected_routes) && !Auth::check()) {
     header('Location: ' . BASE_PATH . '/login');
     exit;

@@ -3,42 +3,39 @@ class DashboardController
 {
     public function index()
     {
-        // Incluir el modelo Well para acceder a las funciones de datos reales
-        require_once __DIR__ . '/../models/Well.php';
-        
-        // Obtener SOLO las estadísticas generales que necesitamos
-        $generalStats = Well::getDashboardGeneralStats();
-        
-        // Formatear la fecha de última actualización si viene de BD
-        if (isset($generalStats['lastUpdate']) && $generalStats['lastUpdate']) {
-            if ($generalStats['lastUpdate'] instanceof DateTime) {
-                $generalStats['lastUpdate'] = $generalStats['lastUpdate']->format('d/m/Y H:i');
-            } elseif (is_string($generalStats['lastUpdate'])) {
-                // Si viene como string de Oracle, intentar convertir
-                $dateTime = DateTime::createFromFormat('d-M-y H.i.s.u A', $generalStats['lastUpdate']);
-                if ($dateTime) {
-                    $generalStats['lastUpdate'] = $dateTime->format('d/m/Y H:i');
-                }
-            }
-        } else {
-            $generalStats['lastUpdate'] = date('d/m/Y H:i');
-        }
-        
-
-        
+        // Datos de muestra
         $data = [
-            // SOLO LAS 4 ESTADÍSTICAS DE LAS TARJETAS
-            'totalWells' => $generalStats['totalWells'] ?? 0,
-            'activeWells' => $generalStats['activeWells'] ?? 0,
-            'completedThisYear' => $generalStats['completedThisYear'] ?? 0,
-            'lastUpdate' => $generalStats['lastUpdate']
+            'totalWells' => 4850,
+            'activeWells' => 3920,
+            'lastUpdate' => date('d/m/Y H:i'),
+            
+            'regionStats' => [
+                'occidente' => ['total' => 1250, 'active' => 980, 'production' => 420000],
+                'llanos' => ['total' => 850, 'active' => 720, 'production' => 380000],
+                'oriente' => ['total' => 1500, 'active' => 1350, 'production' => 620000],
+                'faja' => ['total' => 800, 'active' => 650, 'production' => 550000],
+                'costa_afuera' => ['total' => 450, 'active' => 220, 'production' => 180000]
+            ],
+            
+            'mixedStats' => [
+                'petrororaima' => ['wells' => 320, 'production' => 150000, 'region' => 'oriente'],
+                'petronado' => ['wells' => 280, 'production' => 180000, 'region' => 'oriente'],
+                'petromacareo' => ['wells' => 350, 'production' => 200000, 'region' => 'faja'],
+                'petromonagas' => ['wells' => 420, 'production' => 220000, 'region' => 'oriente'],
+                'petrocedeño' => ['wells' => 380, 'production' => 210000, 'region' => 'faja'],
+                'petrourica' => ['wells' => 290, 'production' => 160000, 'region' => 'occidente']
+            ],
+            
+            'chartData' => [
+                'regions' => ['Occidente', 'Los Llanos', 'Oriente', 'Faja', 'Costa Afuera'],
+                'regionProduction' => [420000, 380000, 620000, 550000, 180000],
+                'mixedProduction' => [150000, 180000, 200000, 220000, 210000, 160000]
+            ]
         ];
 
         // Cargar la vista directamente
         $this->loadView('dashboard', $data);
     }
-    
-
 
     /**
      * Método para cargar vistas

@@ -1,0 +1,141 @@
+/* ===== MasterWell – Detalle de Pozo (look & feel del sitio) ===== */
+.details-wrapper{
+  max-width: 1100px;
+  margin: 16px auto 48px;
+  padding: 0 16px;
+  color: #0f172a;                 /* hereda bien con el sitio */
+  font: inherit;
+}
+
+.page-title{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-bottom: 16px;
+}
+.page-title h1{ margin:0; font-size: 22px; font-weight:600; color:#0f172a; }
+.page-subtitle{ margin-top:4px; font-size:13px; color:#475569; }
+.actions{ display:flex; gap:8px; flex-wrap:wrap; }
+/* Se respetan los .btn globales existentes; solo afinamos mínimos */
+.actions .btn{ padding:6px 12px; font-size:13px; border-radius:6px; }
+
+/* ===== Tabs estilo del sitio (acento rojo) ===== */
+:root{
+  --mw-accent: #cc2f2f;           /* rojo acorde al header */
+  --mw-accent-600:#b32929;
+  --mw-border:#e2e8f0;
+  --mw-bg:#ffffff;
+  --mw-muted:#64748b;
+}
+
+#well-tabs{ margin-top: 8px; }
+
+/* barra de pestañas tipo nav-tabs */
+#well-tabs .tab-list{
+  display:flex; flex-wrap:wrap; gap: 0;
+  border-bottom: 1px solid var(--mw-border);
+}
+
+#well-tabs .tab{
+  appearance:none; background:transparent; border:0; cursor:pointer;
+  padding:10px 14px; margin:0;
+  color:#0f172a; font-size:14px; font-weight:600;
+  border-bottom: 3px solid transparent;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+#well-tabs .tab:hover{
+  color: var(--mw-accent);
+  background: #f8fafc;
+}
+#well-tabs .tab.active{
+  color: var(--mw-accent);
+  border-bottom-color: var(--mw-accent);
+  background: #fff;
+}
+
+/* caja de contenido, siguiendo estilos del sitio */
+#well-tabs .tab-panels{
+  background: var(--mw-bg);
+  border: 1px solid var(--mw-border);
+  border-top: none;
+  padding: 16px 18px 20px;
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 0 1px 0 rgba(2,6,23,0.04);
+}
+
+/* mostrar únicamente el panel activo */
+.tab-panel{ display:none; }
+.tab-panel.active{ display:block; }
+
+.section-title{
+  margin: 0 0 10px 0;
+  font-size:16px; font-weight:600; color:#0f172a;
+}
+
+/* lista Campo: Valor al estilo del sitio */
+.kv-list{ list-style:none; margin:0; padding:0; }
+.kv-list li{
+  padding:8px 0;
+  border-bottom: 1px dashed var(--mw-border);
+}
+.kv-list li:last-child{ border-bottom: 0; }
+.kv-label{ font-weight:700; color:#0f172a; }
+.kv-value{ margin-left:6px; color:#334155; }
+.kv-mono{
+  font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+/* tablas (si no usas .table global, esto mantiene coherencia) */
+.table-wrap{ overflow:auto; }
+.table{
+  width:100%; border-collapse:collapse; font-size:13px; min-width:640px;
+}
+.table th, .table td{
+  border:1px solid var(--mw-border);
+  padding:8px 10px; text-align:left; white-space:nowrap;
+}
+.table th{ background:#f1f5f9; color:#0f172a; font-weight:600; }
+.table tr:hover td{ background:#f8fafc; }
+
+/* responsive */
+@media (max-width: 720px){
+  .page-title{ flex-direction:column; align-items:flex-start; gap:6px; }
+  #well-tabs .tab{ font-size:13px; padding:9px 12px; }
+}
+
+/* Edición */
+.wd-form .wd-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+  display: block;
+}
+.wd-form .wd-field input[type="text"],
+.wd-form .wd-field input[type="number"],
+.wd-form .wd-field input[type="date"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.8px solid #94a3b8;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f1f5f9;
+  color: #111827;
+  transition: all .2s ease;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+}
+.wd-form .wd-field input:hover { background:#f8fafc; border-color:#64748b; }
+.wd-form .wd-field input:focus { outline:none; border-color:#3b82f6; background:#fff; box-shadow:0 0 0 3px rgba(59,130,246,.15); }
+
+.wd-toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+  z-index: 1000;
+}
+.wd-toast.ok { background:#10b981; }
+.wd-toast.err { background:#ef4444; }

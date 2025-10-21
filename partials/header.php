@@ -31,6 +31,7 @@ if (!Auth::check()) {
             <li><a href="<?php echo BASE_PATH; ?>/dashboard">Inicio</a></li>
             <li><a href="<?php echo BASE_PATH; ?>/well">Pozo</a></li>
             <li><a href="<?php echo BASE_PATH; ?>/tables/details">Detalles de Tablas</a></li>
+            <li><a href="<?php echo BASE_PATH; ?>/wells-directory">Pozos v2</a></li>
             <li><a href="<?php echo BASE_PATH; ?>/explorer">Explorador de DB</a></li>
             <li><a href="<?php echo BASE_PATH; ?>/schema">Esquema WELL_HDR</a></li>
             <li><a href="<?php echo BASE_PATH; ?>/sqlplus">Consola SQL</a></li>
